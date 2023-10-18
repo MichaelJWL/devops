@@ -1,8 +1,8 @@
-resource "aws_vpc" "test-vpc" {
+resource "aws_vpc" "jaewlim-vpc" {
 
   // 이름 태그
   tags = {
-    Name = "test-vpc"
+    Name = "jaewlim-vpc"
   }
 
   // IPv4 CIDR - 변수에서 참조

@@ -1,22 +1,22 @@
-resource "aws_s3_bucket" "test-s3-tf-state" {
+resource "aws_s3_bucket" "jaewlim-s3-tf-state" {
 
   // 버킷 이름
-  bucket = "comento-s3-bucket-testuser"
+  bucket = "comento-s3-bucket-jaewlim"
 
   // 태그명
   tags = {
-    "Name" = "comento-s3-bucket-testuser"
+    "Name" = "comento-s3-bucket-jaewlim"
   }
   
 }
 
-resource "aws_dynamodb_table" "test-ddb-tflock-state" {
+resource "aws_dynamodb_table" "jaewlim-ddb-tflock-state" {
 
   // 프로비저닝 전 S3 Bucket이 생성되어야 함
-  depends_on = [aws_s3_bucket.test-s3-tf-state]
+  depends_on = [aws_s3_bucket.jaewlim-s3-tf-state]
 
   // 테이블 이름
-  name = "comento-ddb-table-testuser"
+  name = "comento-ddb-table-jaewlim"
 
   // 파티션 키
   attribute {
@@ -35,7 +35,7 @@ resource "aws_dynamodb_table" "test-ddb-tflock-state" {
 
   // 태그
   tags = {
-    "Name" = "comento-ddb-table-testuser"
+    "Name" = "comento-ddb-table-jaewlim"
   }
 
 }
